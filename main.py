@@ -151,6 +151,7 @@ def delete_planet(r_node, p_node):
             l_node.right = None
         else:
             l_node.left = None
+            
     print(f"You have ejected {p_node.name} out of orbit. How rude!")
     space_records.remove(p_node)
     return r_node
