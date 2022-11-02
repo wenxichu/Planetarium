@@ -24,6 +24,14 @@ def quick_sort(p_array, low, high):
     return p_array
 
 
+def units(p_list):
+    for p in p_list:
+        if p.dist_sun < 1000:
+            print(f"{p.name}, {int(p.dist_sun)} million mi")
+        else:
+            print(f"{p.name}, {p.dist_sun/1000} billion mi")
+
+
 # From smallest to largest
 def sort_by_size():
     planet_size = {}
@@ -110,11 +118,7 @@ if __name__ == "__main__":
     # Sort by distance
     print("\nDistance from the Sun\n")
     planet_dist = quick_sort(space_records, 0, len(space_records) - 1)
-    for p in planet_dist:
-        if p.dist_sun < 1000:
-            print(f"{p.name}, {int(p.dist_sun)} million mi")
-        else:
-            print(f"{p.name}, {p.dist_sun/1000} billion mi")
+    units(planet_dist)
     print("\nSort by Planet Radius\n")
     sort_by_size()
 
