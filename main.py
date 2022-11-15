@@ -79,13 +79,6 @@ class SolarSystem:
             return
 
 
-def orbit_helper(n):
-    if n < 360:
-        return "days"
-    else:
-        return "years"
-
-
 def traverse_orbits(r_node):
     print("Orbital Period\n")
     if not r_node:
@@ -98,7 +91,11 @@ def traverse_orbits(r_node):
             t_node = orbit.get()
             if t_node != r_node:
                 name = t_node.p_data.name
-                time = orbit_helper(t_node.p_data.dist_sun)
+                dist = t_node.p_data.dist_sun
+                if dist < 360:
+                    time = "days"
+                else:
+                    time = "years"
                 period = t_node.p_data.len_year
                 if name == "Asteroid Belt":
                     print(f"// {name} //")
