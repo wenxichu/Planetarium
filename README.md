@@ -5,8 +5,8 @@ Each planet is a node of the solar system binary tree.
 
 Under planetarium.py, use __main__ to sort the planets by:
 
--size (radius)
+-Size (radius)
 
--length of an orbit
+-Length of an orbit
 
--distance from the sun
+-Distance from the sun
